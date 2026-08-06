@@ -31,7 +31,6 @@ kidney-disease-prediction/
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
-└── LICENSE
 ```
 
 ## Prerequisites
