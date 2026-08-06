@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kidney Disease Prediction</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+    :root {
+      --first-color: #3399ff;      /* Light blue */
+      --second-color: #66ccff;     /* Sky blue */
+      --title-color: #003366;      /* Dark navy blue for text */
+      --text-color: #003366bb;     /* Semi-transparent navy text */
+      --body-color: #e6f2ff;       /* Very light blue background */
+
+      --body-font: "Poppins", sans-serif;
+      --h2-font-size: 1.5rem;
+      --small-font-size: 0.9rem;
+      --smaller-font-size: 0.8rem;
+      --font-medium: 500;
+      --font-semi-bold: 600;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-color: var(--body-color);
+      font-family: var(--body-font);
+      color: var(--text-color);
+    }
+
+    input, button {
+      font-family: var(--body-font);
+      border: none;
+      outline: none;
+    }
+
+    .container {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .login__content {
+      width: 100%;
+      max-width: 850px;
+      background-color: #ffffffee;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
+    }
+
+    .login__form {
+      display: grid;
+      row-gap: 1.5rem;
+    }
+
+    .login__title {
+      color: var(--title-color);
+      font-size: var(--h2-font-size);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .login__inputs {
+      display: grid;
+      row-gap: 1rem;
+    }
+
+    .login__label {
+      font-size: var(--small-font-size);
+      font-weight: var(--font-semi-bold);
+      color: var(--title-color);
+      margin-bottom: 0.25rem;
+    }
+
+    .login__input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid #cce6ff;
+      background-color: #f2f9ff;
+      color: var(--title-color);
+      font-size: var(--smaller-font-size);
+      font-weight: var(--font-medium);
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    .login__input:focus {
+      border: 2px solid var(--first-color);
+      box-shadow: 0 4px 8px rgba(51, 153, 255, 0.3);
+    }
+
+    .login__buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .login__button {
+      padding: 12px 2rem;
+      border-radius: 6px;
+      background: linear-gradient(to right, var(--first-color), var(--second-color));
+      color: white;
+      font-size: var(--small-font-size);
+      font-weight: var(--font-semi-bold);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s;
+      box-shadow: 0 6px 20px rgba(51, 153, 255, 0.3);
+    }
+
+    .login__button:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(to right, #2b89e0, #5fcfff);
+    }
+
+    @media screen and (max-width: 576px) {
+      .login__content {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="login__content">
+      <form action="{% url 'Deploy_9' %}" method="POST" class="login__form">
+        {% csrf_token %}
+        <h1 class="login__title">KIDNEY DISEASE MODEL</h1>
+
+        <div class="login__inputs">
+          <div>
+            <label class="login__label">Blood Pressure</label>
+            <input type="number" name="Bp" placeholder="Enter your Blood Pressure" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Sg</label>
+            <input type="number" name="Sg" placeholder="Enter your Sg" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Albumin</label>
+            <input type="number" name="Al" placeholder="Enter Albumin" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Sugar</label>
+            <input type="text" name="Su" placeholder="Enter your Sugar" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Red Blood Cells</label>
+            <input type="text" name="Rbc" placeholder="Enter your Red Blood Cells" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Blood Urea</label>
+            <input type="number" name="Bu" placeholder="Enter your Blood Urea" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Serum Creatinine</label>
+            <input type="text" name="Sc" placeholder="Enter your Serum Creatinine" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Sodium</label>
+            <input type="text" name="Sod" placeholder="Enter your Sodium" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Potassium</label>
+            <input type="number" name="Pot" placeholder="Enter Potassium" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Hemoglobin</label>
+            <input type="text" name="Hemo" placeholder="Enter your Hemoglobin" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">White Blood Cell Count</label>
+            <input type="text" name="Wbcc" placeholder="Enter your White Blood Cell Count" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Red Blood Cell Count</label>
+            <input type="number" name="Rbcc" placeholder="Enter Red Blood Cell Count" required class="login__input" />
+          </div>
+
+          <div>
+            <label class="login__label">Hypertension</label>
+            <input type="text" name="Htn" placeholder="Enter your Hypertension" required class="login__input" />
+          </div>
+        </div>
+
+        <div class="login__buttons">
+          <button class="login__button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
