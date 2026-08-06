@@ -20,13 +20,19 @@ This project is a Django-based web application designed to classify kidney healt
 - HTML, CSS, JavaScript
 
 ## Project Structure
-- `manage.py` - Django management command utility
-- `PROJECT/` - Django project settings and URL configuration
-- `APP/` - Django application with views, models, forms, templates, and trained model files
-- `static/` - Frontend static assets (CSS, JS, fonts, images)
-- `media/` - Uploaded media files
-- `requirements.txt` - Python dependency list
-- `README.md` - Project documentation
+```text
+kidney-disease-prediction/
+├── APP/
+├── PROJECT/
+├── static/
+├── templates/
+├── media/
+├── manage.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── LICENSE
+```
 
 ## Prerequisites
 - Python 3.x
